@@ -2,14 +2,15 @@ import React from "react";
 import { motion } from "framer-motion";
 import { X } from "lucide-react";
 import { navigationLinks } from "../../data/navigationData";
-import { useNavigation } from "../../hooks/useNavigation";
+import { useScrollSpy } from "../../hooks/useScrollSpy";
+import NavLink from "./NavLink";
 
 interface MobileMenuProps {
   onClose: () => void;
 }
 
 export default function MobileMenu({ onClose }: MobileMenuProps) {
-  const { activeSection, scrollToSection } = useNavigation();
+  const { activeSection, scrollToSection } = useScrollSpy();
 
   const handleNavigation = (id: string) => {
     scrollToSection(id);
@@ -44,18 +45,14 @@ export default function MobileMenu({ onClose }: MobileMenuProps) {
 
         <div className="px-2 py-4">
           {navigationLinks.map((link) => (
-            <motion.button
+            <NavLink
               key={link.id}
-              whileTap={{ scale: 0.95 }}
+              id={link.id}
+              label={link.label}
+              isActive={activeSection === link.id}
               onClick={() => handleNavigation(link.id)}
-              className={`w-full px-4 py-3 text-left rounded-lg transition-colors ${
-                activeSection === link.id
-                  ? "bg-indigo-50 dark:bg-indigo-900/30 text-indigo-600 dark:text-indigo-400"
-                  : "text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800"
-              }`}
-            >
-              {link.label}
-            </motion.button>
+              isMobile
+            />
           ))}
         </div>
       </motion.div>
