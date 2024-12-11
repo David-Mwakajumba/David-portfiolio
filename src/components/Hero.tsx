@@ -26,7 +26,7 @@ export default function Hero() {
             }}
             className="mb-8"
           >
-            <div className="relative w-40 h-40 mx-auto">
+            {/* <div className="relative w-40 h-40 mx-auto">
               <motion.div
                 animate={{
                   rotate: 360,
@@ -49,7 +49,7 @@ export default function Hero() {
               <div className="relative w-40 h-40 rounded-full overflow-hidden ring-2 ring-white/20 dark:ring-black/20">
                 <img src={david} className="w-full h-full object-cover" />{" "}
               </div>
-            </div>
+            </div> */}
           </motion.div>
 
           <motion.div
