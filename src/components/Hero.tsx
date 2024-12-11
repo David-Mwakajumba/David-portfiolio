@@ -133,17 +133,17 @@ export default function Hero() {
               <motion.a
                 key={label}
                 whileHover={{
-                  scale: 1.1,
-                  y: -2,
+                  scale: 1.2,
+                  y: -4,
                   transition: { duration: 0.2 },
                 }}
                 whileTap={{ scale: 0.95 }}
                 href={href}
-                className="group relative p-4 rounded-full bg-white/10 dark:bg-gray-800/10 backdrop-blur-lg border border-white/20 dark:border-gray-700/20"
+                className="group relative p-4 rounded-full bg-white/10 dark:bg-gray-800/10 backdrop-blur-lg border border-white/20 dark:border-gray-700/20 hover:border-indigo-500/50 dark:hover:border-indigo-400/50"
               >
                 <motion.div
                   className="absolute inset-0 rounded-full bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 opacity-0 group-hover:opacity-20 transition-all duration-300"
-                  whileHover={{ scale: 1.2, opacity: 0.2 }}
+                  whileHover={{ scale: 1.4, opacity: 0.3 }}
                 />
                 <Icon className="h-6 w-6 text-gray-700 dark:text-gray-300 group-hover:text-indigo-500 dark:group-hover:text-indigo-400 transition-colors duration-300" />
                 <span className="sr-only">{label}</span>
@@ -159,15 +159,15 @@ export default function Hero() {
           >
             <motion.div
               animate={{
-                y: [0, 8, 0],
+                y: [0, 12, 0],
                 opacity: [0.5, 1, 0.5],
               }}
               transition={{
-                duration: 2,
+                duration: 3,
                 repeat: Infinity,
                 ease: "easeInOut",
               }}
-              className="p-3 rounded-full bg-white/10 dark:bg-gray-800/10 backdrop-blur-lg border border-white/20 dark:border-gray-700/20"
+              className="p-3 rounded-full bg-white/10 dark:bg-gray-800/10 backdrop-blur-lg border border-white/20 dark:border-gray-700/20 hover:border-indigo-500/50"
             >
               <ChevronDown className="h-6 w-6 text-gray-600 dark:text-gray-400" />
             </motion.div>
